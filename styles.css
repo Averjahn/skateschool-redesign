@@ -282,6 +282,8 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 @media (max-width: 768px) {
   .nav, .header__phone { display: none; }
   .burger { display: flex; }
+  /* Логотип — только эмблема, текст скрыт */
+  .logo__text { display: none; }
   .nav.is-open {
     display: flex; flex-direction: column; gap: 0;
     position: absolute; top: 72px; left: 0; right: 0;
@@ -293,10 +295,23 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
   .pricing.is-active, .features, .coaches, .offers { grid-template-columns: 1fr; }
   .hero__facts { grid-template-columns: 1fr; }
-  .section { padding: 60px 0; }
+  .section { padding: 52px 0; }
+  /* Карточки features — компактнее на мобильном */
+  .feature { padding: 22px 20px; }
+  .feature__icon { width: 48px; height: 48px; font-size: 24px; margin-bottom: 14px; }
+  /* Прайс-карточки */
+  .price-card { padding: 24px 20px; }
+  /* Форма записи */
+  .book__form { padding: 24px 20px; }
+  /* Тренеры */
+  .coach__info { padding: 16px 18px; }
 }
 @media (max-width: 480px) {
   .footer__inner { grid-template-columns: 1fr; }
   .tabs { width: 100%; }
   .tab { flex: 1; padding: 10px 8px; font-size: 14px; }
+  /* Скрыть кнопку «Записаться» в хедере — есть в бургер-меню */
+  .header__cta .btn { display: none; }
+  .hero__title { font-size: clamp(28px, 8vw, 40px); }
+  .stat__num { font-size: 28px; }
 }
