@@ -267,6 +267,122 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .footer__bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 24px; color: var(--muted); font-size: 14px; }
 .footer__up:hover { color: var(--accent-text); }
 
+/* ===== HISTORY ===== */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.era {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  border-top: 3px solid transparent;
+  transition: border-color .25s var(--ease), transform .25s var(--ease);
+}
+.era:hover {
+  border-top-color: var(--accent);
+  transform: translateY(-4px);
+}
+.era__year {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent-text);
+  letter-spacing: .06em;
+  margin-bottom: 10px;
+}
+.era h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.era p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.history-divider {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.history-divider::before,
+.history-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.history-divider span {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.history-lead {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.skate-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.video-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  transition: transform .25s var(--ease), border-color .25s;
+}
+.video-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 212, 0, .4);
+}
+.video-card__year {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent-text);
+  line-height: 1;
+  margin-bottom: 14px;
+  opacity: .65;
+}
+.video-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.video-card__co {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 14px;
+}
+.video-card__text {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 980px) {
   .hero__inner { grid-template-columns: 1fr; gap: 36px; }
@@ -278,6 +394,8 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .spots-map iframe { min-height: 320px; }
   .book__inner { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+  .skate-videos { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .nav, .header__phone { display: none; }
@@ -305,6 +423,8 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .book__form { padding: 24px 20px; }
   /* Тренеры */
   .coach__info { padding: 16px 18px; }
+  .timeline { grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
+  .skate-videos { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .footer__inner { grid-template-columns: 1fr; }
