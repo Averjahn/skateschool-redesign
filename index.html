@@ -452,48 +452,84 @@
       </div>
       <p class="history-lead">Скейтвидео — это не просто съёмка трюков. Это манифест культуры, выбор музыки, монтаж, точка зрения. Эти фильмы создали язык скейтбординга.</p>
 
+      <!-- Встроенный плеер -->
+      <div class="video-player" id="skatePlayer">
+        <div class="video-player__embed">
+          <iframe id="skateFrame"
+            src="https://www.youtube.com/embed/BVu9GQD0j0s"
+            frameborder="0" allowfullscreen loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="The Bones Brigade Video Show"></iframe>
+        </div>
+        <div class="video-player__meta">
+          <div class="video-player__info">
+            <span class="video-player__label" id="skateVideoLabel">1984 · Powell Peralta</span>
+            <span class="video-player__title" id="skateVideoTitle">The Bones Brigade Video Show</span>
+          </div>
+          <a class="video-player__yt" id="skateVideoYt" href="https://www.youtube.com/watch?v=BVu9GQD0j0s" target="_blank" rel="noopener">YouTube ↗</a>
+        </div>
+      </div>
+
       <div class="skate-videos">
-        <article class="video-card">
+        <article class="video-card is-active"
+          data-video-id="BVu9GQD0j0s"
+          data-video-title="The Bones Brigade Video Show"
+          data-video-label="1984 · Powell Peralta">
           <div class="video-card__year">1984</div>
           <h3 class="video-card__title">The Bones Brigade Video Show</h3>
           <span class="video-card__co">Powell Peralta · dir. Stacy Peralta</span>
           <p class="video-card__text">Первое настоящее скейтвидео — концепция, которой до этого не существовало. Tony Hawk, Steve Caballero, Lance Mountain, Tommy Guerrero. Всё началось с этой VHS-кассеты.</p>
-          <a class="video-card__source" href="https://en.wikipedia.org/wiki/The_Bones_Brigade_Video_Show" target="_blank" rel="noopener">Wikipedia ↗</a>
+          <a class="video-card__source" href="https://en.wikipedia.org/wiki/The_Bones_Brigade_Video_Show" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
-        <article class="video-card">
+        <article class="video-card"
+          data-video-id="AI365uIRo1A"
+          data-video-title="Public Domain"
+          data-video-label="1988 · Powell Peralta">
           <div class="video-card__year">1988</div>
           <h3 class="video-card__title">Public Domain</h3>
           <span class="video-card__co">Powell Peralta · dir. Stacy Peralta</span>
           <p class="video-card__text">Tony Hawk на пике. Первая зафиксированная попытка 900° на рампе. Монументальное производство для своего времени — эпопея вертикального скейтбординга.</p>
-          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Public_Domain_(film)" target="_blank" rel="noopener">Wikipedia ↗</a>
+          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Public_Domain_(film)" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
-        <article class="video-card">
+        <article class="video-card"
+          data-video-id="6eCXj_BHx9k"
+          data-video-title="Streets on Fire"
+          data-video-label="1989 · Santa Cruz Skateboards">
           <div class="video-card__year">1989</div>
-          <h3 class="video-card__title">Wheels of Fire</h3>
+          <h3 class="video-card__title">Streets on Fire</h3>
           <span class="video-card__co">Santa Cruz Skateboards</span>
-          <p class="video-card__text">Natas Kaupas, Jason Jessee, Eric Dressen. Видео Santa Cruz показало, что существует мир за пределами Powell. Ответ конкурентов из лагеря vert-скейтинга.</p>
-          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Wheels_of_Fire_(film)" target="_blank" rel="noopener">Wikipedia ↗</a>
+          <p class="video-card__text">Первая часть Jason Lee в скейтвидео. Natas Kaupas, Jason Jessee. Стрит-скейтинг начинал захватывать пространство у вертикального — это видео зафиксировало момент перелома.</p>
+          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Santa_Cruz_Skateboards" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
-        <article class="video-card">
+        <article class="video-card"
+          data-video-id="Kgr48SPEyS4"
+          data-video-title="Questionable"
+          data-video-label="1992 · Plan B Skateboards">
           <div class="video-card__year">1992</div>
           <h3 class="video-card__title">Questionable</h3>
           <span class="video-card__co">Plan B Skateboards · dir. Spike Jonze</span>
           <p class="video-card__text">Революция стрита. Rick Howard, Mike Carroll, Danny Way — новый стандарт технического скейтинга. Spike Jonze превратил скейтвидео в кинематограф.</p>
-          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Questionable_(film)" target="_blank" rel="noopener">Wikipedia ↗</a>
+          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Questionable_(film)" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
-        <article class="video-card">
+        <article class="video-card"
+          data-video-id="Qp_vOLB-OUE"
+          data-video-title="Mouse"
+          data-video-label="1996 · Girl Skateboards">
           <div class="video-card__year">1996</div>
           <h3 class="video-card__title">Mouse</h3>
           <span class="video-card__co">Girl Skateboards · dir. Spike Jonze</span>
           <p class="video-card__text">Чёрно-белые кадры, джазовый саундтрек, авторский монтаж. Доказательство того, что скейтвидео — произведение искусства, а не просто компиляция трюков.</p>
-          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Mouse_(video)" target="_blank" rel="noopener">Wikipedia ↗</a>
+          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Mouse_(video)" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
-        <article class="video-card">
+        <article class="video-card"
+          data-video-id="52-62ywYPsk"
+          data-video-title="Yeah Right!"
+          data-video-label="2003 · Girl Skateboards">
           <div class="video-card__year">2003</div>
           <h3 class="video-card__title">Yeah Right!</h3>
           <span class="video-card__co">Girl Skateboards · dir. Spike Jonze</span>
           <p class="video-card__text">Полный метр с невидимыми скейтбордами и кинематографическим юмором. Технически совершенный и игривый — последнее великое видео до эпохи YouTube.</p>
-          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Yeah_Right!" target="_blank" rel="noopener">Wikipedia ↗</a>
+          <a class="video-card__source" href="https://en.wikipedia.org/wiki/Yeah_Right!" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
       </div>
     </div>

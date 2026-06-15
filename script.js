@@ -75,6 +75,34 @@ spotButtons.forEach((spot) => {
   });
 });
 
+// ===== Skate video player =====
+const skateFrame    = document.getElementById('skateFrame');
+const skateTitle    = document.getElementById('skateVideoTitle');
+const skateLabel    = document.getElementById('skateVideoLabel');
+const skateYt       = document.getElementById('skateVideoYt');
+const skatePlayer   = document.getElementById('skatePlayer');
+const allVideoCards = document.querySelectorAll('.video-card[data-video-id]');
+
+allVideoCards.forEach((card) => {
+  card.addEventListener('click', (e) => {
+    // Клик по «Wikipedia ↗» не переключает видео (stopPropagation в HTML)
+    allVideoCards.forEach((c) => c.classList.remove('is-active'));
+    card.classList.add('is-active');
+
+    const id    = card.dataset.videoId;
+    const title = card.dataset.videoTitle;
+    const label = card.dataset.videoLabel;
+
+    skateFrame.src      = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    skateTitle.textContent = title;
+    skateLabel.textContent = label;
+    skateYt.href        = `https://www.youtube.com/watch?v=${id}`;
+    skateYt.title       = title;
+
+    skatePlayer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+});
+
 // ===== Booking form =====
 const form = document.getElementById('bookForm');
 const note = document.getElementById('formNote');
