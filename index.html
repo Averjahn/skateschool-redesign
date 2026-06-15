@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skate School NN — нижегородская школа скейтбординга</title>
+  <meta name="description" content="Научим кататься на скейтборде с нуля. Дети с 5 лет, подростки и взрослые. Крытый парк, круглый год, оборудование включено. Бесплатное пробное занятие." />
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Тема применяется ДО отрисовки, чтобы не было вспышки чужого фона (FOUC).
+       Приоритет: осознанный выбор пользователя (localStorage) → системная тема устройства. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', saved || system);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <img src="assets/img/emblem.png" alt="Skate School NN" class="logo__mark" />
+        <span class="logo__text">Skate&nbsp;School<span class="logo__accent">NN</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#formats" class="nav__link">Форматы и цены</a>
+        <a href="#why" class="nav__link">Почему мы</a>
+        <a href="#coaches" class="nav__link">Тренеры</a>
+        <a href="#spots" class="nav__link">Площадки</a>
+        <a href="#faq" class="nav__link">Вопросы</a>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:+79159447137" class="header__phone">+7 (915) 944-71-37</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему" title="Светлая / тёмная тема">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+        <a href="#book" class="btn btn--primary btn--sm">Записаться</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">8+ лет на скейте Нижнего Новгорода</span>
+        <h1 class="hero__title">Встанешь на доску<br><span class="accent">уже на первом занятии</span></h1>
+        <p class="hero__lead">
+          Школа скейтбординга, где методика, опытные тренеры и крытый парк работают
+          на твой реальный прогресс. Дети с 5 лет, подростки и взрослые — с нуля до уверенных трюков.
+        </p>
+        <div class="hero__actions">
+          <a href="#book" class="btn btn--primary btn--lg">Бесплатное пробное занятие</a>
+          <a href="#formats" class="btn btn--ghost btn--lg">Форматы и цены</a>
+        </div>
+        <ul class="hero__facts">
+          <li><b>Круглый&nbsp;год</b><span>крытый парк, не зависит от погоды</span></li>
+          <li><b>5–8 человек</b><span>малые группы, внимание каждому</span></li>
+          <li><b>Всё включено</b><span>доска и защита бесплатно</span></li>
+        </ul>
+      </div>
+      <div class="hero__media">
+        <img src="assets/img/action-1.jpg" alt="Ученик школы скейтбординга" />
+        <div class="hero__media-tag">
+          <span class="dot"></span> набережная Гребного канала, 108Г
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat"><span class="stat__num">8+</span><span class="stat__label">лет опыта</span></div>
+      <div class="stat"><span class="stat__num">3</span><span class="stat__label">тренера-профи</span></div>
+      <div class="stat"><span class="stat__num">5</span><span class="stat__label">площадок в городе</span></div>
+      <div class="stat"><span class="stat__num">5&nbsp;лет</span><span class="stat__label">минимальный возраст</span></div>
+    </div>
+  </section>
+
+  <!-- ===== FORMATS & PRICING ===== -->
+  <section class="section" id="formats">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Форматы занятий</span>
+        <h2 class="section__title">Выбери, как удобно заниматься</h2>
+        <p class="section__sub">Все цены включают аренду доски, защиту и вход в скейт-парк.</p>
+      </div>
+
+      <div class="tabs" id="tabs">
+        <button class="tab is-active" data-tab="group">Групповые</button>
+        <button class="tab" data-tab="individual">Индивидуальные</button>
+        <button class="tab" data-tab="pair">Парные</button>
+      </div>
+
+      <!-- GROUP -->
+      <div class="pricing is-active" data-panel="group">
+        <article class="price-card">
+          <h3>Разовое занятие</h3>
+          <div class="price"><span>1 500</span> ₽</div>
+          <p class="price-card__meta">1,5 часа · группа 5–8 человек</p>
+          <ul class="price-card__list">
+            <li>Доска и защита включены</li>
+            <li>Вход в крытый парк</li>
+            <li>Разминка и работа по уровню</li>
+          </ul>
+          <a href="#book" class="btn btn--ghost btn--block">Записаться</a>
+        </article>
+        <article class="price-card price-card--featured">
+          <span class="price-card__tag">Выгодно</span>
+          <h3>Абонемент 4 занятия</h3>
+          <div class="price"><span>5 500</span> ₽</div>
+          <p class="price-card__meta">4 × 1,5 часа · 1 375 ₽ / занятие</p>
+          <ul class="price-card__list">
+            <li>Доска и защита включены</li>
+            <li>Вход в крытый парк</li>
+            <li>Стабильный прогресс по плану</li>
+          </ul>
+          <a href="#book" class="btn btn--primary btn--block">Записаться</a>
+        </article>
+        <article class="price-card">
+          <h3>Абонемент 8 занятий</h3>
+          <div class="price"><span>8 000</span> ₽</div>
+          <p class="price-card__meta">8 × 1,5 часа · 1 000 ₽ / занятие</p>
+          <ul class="price-card__list">
+            <li>Доска и защита включены</li>
+            <li>Вход в крытый парк</li>
+            <li>Скидка 20% в скейт-шопе</li>
+          </ul>
+          <a href="#book" class="btn btn--ghost btn--block">Записаться</a>
+        </article>
+      </div>
+
+      <!-- INDIVIDUAL -->
+      <div class="pricing" data-panel="individual">
+        <article class="price-card">
+          <h3>Разовое занятие</h3>
+          <div class="price"><span>2 200</span> ₽</div>
+          <p class="price-card__meta">1 час · только вы и тренер</p>
+          <ul class="price-card__list">
+            <li>Доска и защита включены</li>
+            <li>Вход в крытый парк</li>
+            <li>Максимально быстрый прогресс</li>
+          </ul>
+          <a href="#book" class="btn btn--ghost btn--block">Записаться</a>
+        </article>
+        <article class="price-card price-card--featured">
+          <span class="price-card__tag">Выгодно</span>
+          <h3>Абонемент 4 занятия</h3>
+          <div class="price"><span>7 600</span> ₽</div>
+          <p class="price-card__meta">4 × 1 час · 1 900 ₽ / занятие</p>
+          <ul class="price-card__list">
+            <li>Доска и защита включены</li>
+            <li>Персональная программа</li>
+            <li>Гибкое расписание</li>
+          </ul>
+          <a href="#book" class="btn btn--primary btn--block">Записаться</a>
+        </article>
+        <article class="price-card">
+          <h3>Абонемент 8 занятий</h3>
+          <div class="price"><span>14 400</span> ₽</div>
+          <p class="price-card__meta">8 × 1 час · 1 800 ₽ / занятие</p>
+          <ul class="price-card__list">
+            <li>Доска и защита включены</li>
+            <li>Подготовка к соревнованиям</li>
+            <li>Скидка 20% в скейт-шопе</li>
+          </ul>
+          <a href="#book" class="btn btn--ghost btn--block">Записаться</a>
+        </article>
+      </div>
+
+      <!-- PAIR -->
+      <div class="pricing" data-panel="pair">
+        <article class="price-card">
+          <h3>Разовое занятие</h3>
+          <div class="price"><span>3 300</span> ₽</div>
+          <p class="price-card__meta">1 час · на двоих</p>
+          <ul class="price-card__list">
+            <li>Доска и защита для двоих</li>
+            <li>Вход в крытый парк</li>
+            <li>Кататься вдвоём веселее</li>
+          </ul>
+          <a href="#book" class="btn btn--ghost btn--block">Записаться</a>
+        </article>
+        <article class="price-card price-card--featured">
+          <span class="price-card__tag">Выгодно</span>
+          <h3>Абонемент 4 занятия</h3>
+          <div class="price"><span>11 800</span> ₽</div>
+          <p class="price-card__meta">4 × 1 час · 1 475 ₽ / чел.·занятие</p>
+          <ul class="price-card__list">
+            <li>Доска и защита для двоих</li>
+            <li>Программа под пару</li>
+            <li>Друг, партнёр или родитель+ребёнок</li>
+          </ul>
+          <a href="#book" class="btn btn--primary btn--block">Записаться</a>
+        </article>
+        <article class="price-card">
+          <h3>Абонемент 8 занятий</h3>
+          <div class="price"><span>21 500</span> ₽</div>
+          <p class="price-card__meta">8 × 1 час · 1 344 ₽ / чел.·занятие</p>
+          <ul class="price-card__list">
+            <li>Доска и защита для двоих</li>
+            <li>Максимальная выгода</li>
+            <li>Скидка 20% в скейт-шопе</li>
+          </ul>
+          <a href="#book" class="btn btn--ghost btn--block">Записаться</a>
+        </article>
+      </div>
+
+      <!-- INTRO OFFERS -->
+      <div class="offers">
+        <div class="offer">
+          <div class="offer__price">бесплатно</div>
+          <div class="offer__body">
+            <h4>Пробное занятие</h4>
+            <p>Приходи попробовать — занятие бесплатное при покупке абонемента после него.</p>
+          </div>
+          <a href="#book" class="btn btn--primary btn--sm">Записаться</a>
+        </div>
+        <div class="offer">
+          <div class="offer__price">300 ₽</div>
+          <div class="offer__body">
+            <h4>Открытое занятие</h4>
+            <p>Свободное катание в парке 2 раза в месяц. Участникам — скидка 20% на абонементы.</p>
+          </div>
+          <a href="#book" class="btn btn--ghost btn--sm">Узнать дату</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY ===== -->
+  <section class="section section--dark" id="why">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Почему нам доверяют</span>
+        <h2 class="section__title">Не просто покатушки, а система</h2>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="feature__icon">🏠</div>
+          <h3>Крытый парк круглый год</h3>
+          <p>Тренируемся в помещении — дождь, снег и мороз не отменяют занятие.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🛹</div>
+          <h3>Оборудование включено</h3>
+          <p>Доска и полная защита бесплатно. Своя доска — по желанию.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">📈</div>
+          <h3>Методика и прогресс</h3>
+          <p>Каждый идёт в своём темпе: стойка, толчок, контроль доски, первые трюки.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">👥</div>
+          <h3>Малые группы 5–8</h3>
+          <p>Тренер успевает уделить внимание каждому ученику на занятии.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🎯</div>
+          <h3>Для любого уровня</h3>
+          <p>С нуля для новичков и кастом-программы для тех, кто хочет новые трюки.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🏷️</div>
+          <h3>Скидка 20% в шопе</h3>
+          <p>Ученикам с абонементом — скидка на покупки в партнёрском скейт-шопе.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COACHES ===== -->
+  <section class="section" id="coaches">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Тренеры</span>
+        <h2 class="section__title">Катаются сами — и научат тебя</h2>
+      </div>
+      <div class="coaches">
+        <article class="coach">
+          <div class="coach__photo"><img src="assets/img/coach-2.jpg" alt="Никита Ластухин" /></div>
+          <div class="coach__info">
+            <h3>Никита Ластухин</h3>
+            <span class="coach__role">Основатель школы · тренер</span>
+            <p>15+ лет в скейтбординге, член сборной России, более 20 наград на соревнованиях в разных регионах.</p>
+          </div>
+        </article>
+        <article class="coach">
+          <div class="coach__photo"><img src="assets/img/coach-1.jpg" alt="Максим Максимов" /></div>
+          <div class="coach__info">
+            <h3>Максим Максимов</h3>
+            <span class="coach__role">Тренер · группы и индивидуально</span>
+            <p>6+ лет опыта. Скейтборд и сноуборд, работает и с детьми, и со взрослыми.</p>
+          </div>
+        </article>
+        <article class="coach">
+          <div class="coach__photo"><img src="assets/img/coach-3.jpg" alt="Михаил Белов" /></div>
+          <div class="coach__info">
+            <h3>Михаил Белов</h3>
+            <span class="coach__role">Тренер · все возрасты</span>
+            <p>10+ лет опыта. Работает с любым возрастом, проектирует фингерборд-парки.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPOTS ===== -->
+  <section class="section section--dark" id="spots">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Площадки</span>
+        <h2 class="section__title">5 локаций по Нижнему Новгороду</h2>
+        <p class="section__sub">Главная база — крытый парк «Горадром» на Гребном канале. Летом тренируемся и на открытых площадках.</p>
+      </div>
+      <div class="spots-layout">
+        <div class="spots-list" id="spotsList">
+          <button class="spot is-active" data-ll="44.0342063,56.3316335">
+            <img src="assets/img/spot-goradrom.jpg" alt="Скейт-парк Горадром" />
+            <div class="spot__info">
+              <span class="spot__tag">Главная база · крытый</span>
+              <h3>Скейт-парк «Горадром»</h3>
+              <p>наб. Гребного канала, 108Г · Нижегородский р-н</p>
+            </div>
+          </button>
+          <button class="spot" data-ll="43.8554147,56.3430031">
+            <img src="assets/img/spot-trud.jpg" alt="Стадион Труд" />
+            <div class="spot__info">
+              <h3>Стадион «Труд»</h3>
+              <p>бул. Юбилейный, 30 · Сормовский р-н</p>
+            </div>
+          </button>
+          <button class="spot" data-ll="43.9972768,56.3090476">
+            <img src="assets/img/spot-pushkin.jpg" alt="Парк им. Пушкина" />
+            <div class="spot__info">
+              <h3>Парк им. Пушкина</h3>
+              <p>ул. Белинского · Нижегородский р-н</p>
+            </div>
+          </button>
+          <button class="spot" data-ll="43.9740515,56.2777442">
+            <img src="assets/img/spot-switzerland.jpg" alt="Парк Швейцария" />
+            <div class="spot__info">
+              <h3>Парк «Швейцария»</h3>
+              <p>ул. Сурикова · Приокский р-н</p>
+            </div>
+          </button>
+          <button class="spot" data-ll="43.8685117,56.2603341">
+            <img src="assets/img/spot-800.jpg" alt="Парк 800-летия" />
+            <div class="spot__info">
+              <h3>Парк «800-летия»</h3>
+              <p>ул. Бурденко · Автозаводский р-н</p>
+            </div>
+          </button>
+        </div>
+        <div class="spots-map">
+          <iframe
+            id="spotsMap"
+            src="https://yandex.ru/map-widget/v1/?ll=44.0342063,56.3316335&z=16&pt=44.0342063,56.3316335,pm2rdm"
+            width="100%" height="100%" frameborder="0" allowfullscreen="true"
+            title="Карта площадок"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <span class="eyebrow">Частые вопросы</span>
+        <h2 class="section__title">Коротко о главном</h2>
+      </div>
+      <div class="faq" id="faqList">
+        <details class="faq__item">
+          <summary>С какого возраста можно заниматься?</summary>
+          <div class="faq__a">Берём детей с 5 лет, а также подростков и взрослых. Группы делим по возрасту и уровню.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Нужна ли своя доска и защита?</summary>
+          <div class="faq__a">Нет. Доску и защиту выдаём бесплатно на каждом занятии. Своя доска — по желанию.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Я никогда не стоял на скейте — подойдёт?</summary>
+          <div class="faq__a">Да, большинство учеников начинают с нуля. Учим базе: стойка, толчок, контроль доски, первые движения.</div>
+        </details>
+        <details class="faq__item">
+          <summary>А если я уже умею кататься?</summary>
+          <div class="faq__a">Составим программу под задачу: новые трюки, техника, работа со страхом, подготовка к соревнованиям.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Сколько человек в группе?</summary>
+          <div class="faq__a">В среднем 5–8 человек — тренер успевает уделить внимание каждому.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Занимаетесь зимой?</summary>
+          <div class="faq__a">Да, круглый год. Основные тренировки проходят в крытом парке независимо от погоды.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
+  <section class="book" id="book">
+    <div class="container book__inner">
+      <div class="book__text">
+        <h2>Запишись на бесплатное<br>пробное занятие</h2>
+        <p>Оставь контакты — перезвоним, подберём формат, возраст и удобное время. Без обязательств.</p>
+        <ul class="book__list">
+          <li>📞 <a href="tel:+79159447137">+7 (915) 944-71-37</a></li>
+          <li>✉️ <a href="mailto:skateschoolnn@gmail.com">skateschoolnn@gmail.com</a></li>
+          <li>📍 наб. Гребного канала, 108Г</li>
+        </ul>
+      </div>
+      <form class="book__form" id="bookForm" novalidate>
+        <div class="field">
+          <label for="name">Как вас зовут</label>
+          <input type="text" id="name" name="name" placeholder="Имя" required />
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+        </div>
+        <div class="field">
+          <label for="format">Формат</label>
+          <select id="format" name="format">
+            <option value="trial">Бесплатное пробное</option>
+            <option value="group">Групповые занятия</option>
+            <option value="individual">Индивидуальные занятия</option>
+            <option value="pair">Парные занятия</option>
+            <option value="camp">Скейт-кэмп</option>
+          </select>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consent" required />
+          <span>Согласен на обработку персональных данных</span>
+        </label>
+        <button type="submit" class="btn btn--primary btn--block btn--lg">Записаться</button>
+        <p class="book__note" id="formNote" hidden>Спасибо! Заявка отправлена — скоро перезвоним 🤙</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="logo">
+          <img src="assets/img/emblem.png" alt="" class="logo__mark" />
+          <span class="logo__text">Skate&nbsp;School<span class="logo__accent">NN</span></span>
+        </a>
+        <p>Нижегородская школа скейтбординга. Спорт, культура и уверенность в себе с 2016 года.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+79159447137">+7 (915) 944-71-37</a>
+        <a href="mailto:skateschoolnn@gmail.com">skateschoolnn@gmail.com</a>
+        <span>наб. Гребного канала, 108Г</span>
+      </div>
+      <div class="footer__col">
+        <h4>Мы в сети</h4>
+        <a href="https://t.me/skateschoolnino" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.instagram.com/skateschoolnn" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://vk.com/skateschoolnn" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+      <div class="footer__col">
+        <h4>Навигация</h4>
+        <a href="#formats">Форматы и цены</a>
+        <a href="#coaches">Тренеры</a>
+        <a href="#spots">Площадки</a>
+        <a href="#book">Записаться</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Skate School NN. Редизайн-концепт.</span>
+      <a href="#top" class="footer__up">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
