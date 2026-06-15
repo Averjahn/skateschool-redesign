@@ -306,6 +306,20 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   line-height: 1.65;
 }
 
+.era__source,
+.video-card__source {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-text);
+  opacity: .5;
+  letter-spacing: .04em;
+  transition: opacity .2s;
+}
+.era__source:hover,
+.video-card__source:hover { opacity: 1; }
+
 .history-divider {
   display: flex;
   align-items: center;
