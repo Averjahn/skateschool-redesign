@@ -200,7 +200,9 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .feature p { color: var(--muted); font-size: 15px; }
 
 /* ===== COACHES ===== */
-.coaches { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.coaches { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; align-items: start; }
+.coach--featured { border-color: rgba(255,212,0,.5); transform: translateY(-8px); box-shadow: var(--shadow); }
+.coach--featured:hover { transform: translateY(-14px); }
 .coach { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .25s var(--ease); }
 .coach:hover { transform: translateY(-5px); }
 .coach__photo { aspect-ratio: 4/5; overflow: hidden; }
