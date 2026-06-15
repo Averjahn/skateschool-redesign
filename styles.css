@@ -181,6 +181,7 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .price-card__meta { color: var(--muted); font-size: 14px; margin: 8px 0 20px; }
 .price-card__list { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 26px; flex: 1; }
 .price-card__list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--text); }
+[data-theme="light"] .price-card__list li { color: #0d0d12; }
 .price-card__list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 14px; height: 8px; border-left: 2px solid var(--accent-text); border-bottom: 2px solid var(--accent-text); transform: rotate(-45deg); }
 
 /* ===== OFFERS ===== */
