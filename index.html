@@ -466,13 +466,21 @@
             <span class="video-player__label" id="skateVideoLabel">1984 · Powell Peralta</span>
             <span class="video-player__title" id="skateVideoTitle">The Bones Brigade Video Show</span>
           </div>
-          <a class="video-player__yt" id="skateVideoYt" href="https://www.youtube.com/watch?v=BVu9GQD0j0s" target="_blank" rel="noopener">YouTube ↗</a>
+          <div class="video-player__right">
+            <span class="video-player__badge" id="skateBadge" data-src="youtube">YouTube · нужен VPN</span>
+            <a class="video-player__yt" id="skateVideoYt"
+              href="https://www.youtube.com/watch?v=BVu9GQD0j0s"
+              target="_blank" rel="noopener">Открыть ↗</a>
+          </div>
         </div>
       </div>
 
       <div class="skate-videos">
+        <!-- YouTube (нужен VPN) -->
         <article class="video-card is-active"
-          data-video-id="BVu9GQD0j0s"
+          data-embed-url="https://www.youtube.com/embed/BVu9GQD0j0s"
+          data-ext-url="https://www.youtube.com/watch?v=BVu9GQD0j0s"
+          data-src-type="youtube"
           data-video-title="The Bones Brigade Video Show"
           data-video-label="1984 · Powell Peralta">
           <div class="video-card__year">1984</div>
@@ -482,7 +490,9 @@
           <a class="video-card__source" href="https://en.wikipedia.org/wiki/The_Bones_Brigade_Video_Show" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
         <article class="video-card"
-          data-video-id="AI365uIRo1A"
+          data-embed-url="https://www.youtube.com/embed/AI365uIRo1A"
+          data-ext-url="https://www.youtube.com/watch?v=AI365uIRo1A"
+          data-src-type="youtube"
           data-video-title="Public Domain"
           data-video-label="1988 · Powell Peralta">
           <div class="video-card__year">1988</div>
@@ -492,7 +502,9 @@
           <a class="video-card__source" href="https://en.wikipedia.org/wiki/Public_Domain_(film)" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
         <article class="video-card"
-          data-video-id="6eCXj_BHx9k"
+          data-embed-url="https://www.youtube.com/embed/QPPDrhuB5Ns"
+          data-ext-url="https://www.youtube.com/watch?v=QPPDrhuB5Ns"
+          data-src-type="youtube"
           data-video-title="Streets on Fire"
           data-video-label="1989 · Santa Cruz Skateboards">
           <div class="video-card__year">1989</div>
@@ -501,8 +513,11 @@
           <p class="video-card__text">Первая часть Jason Lee в скейтвидео. Natas Kaupas, Jason Jessee. Стрит-скейтинг начинал захватывать пространство у вертикального — это видео зафиксировало момент перелома.</p>
           <a class="video-card__source" href="https://en.wikipedia.org/wiki/Santa_Cruz_Skateboards" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
+        <!-- Archive.org (без VPN) -->
         <article class="video-card"
-          data-video-id="Kgr48SPEyS4"
+          data-embed-url="https://archive.org/embed/plan-b-questionable-1992_202308"
+          data-ext-url="https://archive.org/details/plan-b-questionable-1992_202308"
+          data-src-type="archive"
           data-video-title="Questionable"
           data-video-label="1992 · Plan B Skateboards">
           <div class="video-card__year">1992</div>
@@ -512,7 +527,9 @@
           <a class="video-card__source" href="https://en.wikipedia.org/wiki/Questionable_(film)" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
         <article class="video-card"
-          data-video-id="Qp_vOLB-OUE"
+          data-embed-url="https://archive.org/embed/mouse_201911"
+          data-ext-url="https://archive.org/details/mouse_201911"
+          data-src-type="archive"
           data-video-title="Mouse"
           data-video-label="1996 · Girl Skateboards">
           <div class="video-card__year">1996</div>
@@ -522,7 +539,9 @@
           <a class="video-card__source" href="https://en.wikipedia.org/wiki/Mouse_(video)" target="_blank" rel="noopener" onclick="event.stopPropagation()">Wikipedia ↗</a>
         </article>
         <article class="video-card"
-          data-video-id="52-62ywYPsk"
+          data-embed-url="https://archive.org/embed/yeah-right-girl"
+          data-ext-url="https://archive.org/details/yeah-right-girl"
+          data-src-type="archive"
           data-video-title="Yeah Right!"
           data-video-label="2003 · Girl Skateboards">
           <div class="video-card__year">2003</div>

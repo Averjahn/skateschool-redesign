@@ -394,15 +394,67 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   font-size: 15px;
   font-weight: 700;
 }
+.video-player__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.video-player__badge {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.video-player__badge[data-src="youtube"] {
+  background: rgba(239, 68, 68, .13);
+  color: #f87171;
+}
+.video-player__badge[data-src="archive"] {
+  background: rgba(34, 197, 94, .13);
+  color: #4ade80;
+}
+[data-theme="light"] .video-player__badge[data-src="youtube"] { color: #dc2626; }
+[data-theme="light"] .video-player__badge[data-src="archive"] { color: #16a34a; }
 .video-player__yt {
   font-size: 13px;
   font-weight: 700;
   color: var(--muted);
   white-space: nowrap;
-  flex-shrink: 0;
   transition: color .2s;
 }
 .video-player__yt:hover { color: var(--accent-text); }
+
+/* VPN badge on card */
+.video-card { position: relative; }
+.video-card[data-src-type="youtube"]::after {
+  content: 'VPN';
+  position: absolute;
+  top: 14px; right: 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(239, 68, 68, .13);
+  color: #f87171;
+}
+[data-theme="light"] .video-card[data-src-type="youtube"]::after { color: #dc2626; }
+.video-card[data-src-type="archive"]::after {
+  content: 'Без VPN';
+  position: absolute;
+  top: 14px; right: 14px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(34, 197, 94, .13);
+  color: #4ade80;
+}
+[data-theme="light"] .video-card[data-src-type="archive"]::after { color: #16a34a; }
 
 .skate-videos {
   display: grid;

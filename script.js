@@ -80,24 +80,33 @@ const skateFrame    = document.getElementById('skateFrame');
 const skateTitle    = document.getElementById('skateVideoTitle');
 const skateLabel    = document.getElementById('skateVideoLabel');
 const skateYt       = document.getElementById('skateVideoYt');
+const skateBadge    = document.getElementById('skateBadge');
 const skatePlayer   = document.getElementById('skatePlayer');
-const allVideoCards = document.querySelectorAll('.video-card[data-video-id]');
+const allVideoCards = document.querySelectorAll('.video-card[data-embed-url]');
 
 allVideoCards.forEach((card) => {
-  card.addEventListener('click', (e) => {
-    // Клик по «Wikipedia ↗» не переключает видео (stopPropagation в HTML)
+  card.addEventListener('click', () => {
     allVideoCards.forEach((c) => c.classList.remove('is-active'));
     card.classList.add('is-active');
 
-    const id    = card.dataset.videoId;
-    const title = card.dataset.videoTitle;
-    const label = card.dataset.videoLabel;
+    const embedUrl = card.dataset.embedUrl;
+    const extUrl   = card.dataset.extUrl;
+    const srcType  = card.dataset.srcType;   // "youtube" | "archive"
 
-    skateFrame.src      = `https://www.youtube.com/embed/${id}?autoplay=1`;
-    skateTitle.textContent = title;
-    skateLabel.textContent = label;
-    skateYt.href        = `https://www.youtube.com/watch?v=${id}`;
-    skateYt.title       = title;
+    // YouTube — с autoplay, archive.org — без (браузер блокирует autoplay в iframe)
+    skateFrame.src = srcType === 'youtube'
+      ? `${embedUrl}?autoplay=1`
+      : embedUrl;
+
+    skateTitle.textContent  = card.dataset.videoTitle;
+    skateLabel.textContent  = card.dataset.videoLabel;
+    skateYt.href            = extUrl;
+
+    // Обновляем бейдж источника
+    skateBadge.dataset.src  = srcType;
+    skateBadge.textContent  = srcType === 'youtube'
+      ? 'YouTube · нужен VPN'
+      : 'Archive.org · без VPN';
 
     skatePlayer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
