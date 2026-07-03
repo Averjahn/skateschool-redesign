@@ -75,43 +75,6 @@ spotButtons.forEach((spot) => {
   });
 });
 
-// ===== Skate video player =====
-const skateFrame    = document.getElementById('skateFrame');
-const skateTitle    = document.getElementById('skateVideoTitle');
-const skateLabel    = document.getElementById('skateVideoLabel');
-const skateYt       = document.getElementById('skateVideoYt');
-const skateBadge    = document.getElementById('skateBadge');
-const skatePlayer   = document.getElementById('skatePlayer');
-const allVideoCards = document.querySelectorAll('.video-card[data-embed-url]');
-
-allVideoCards.forEach((card) => {
-  card.addEventListener('click', () => {
-    allVideoCards.forEach((c) => c.classList.remove('is-active'));
-    card.classList.add('is-active');
-
-    const embedUrl = card.dataset.embedUrl;
-    const extUrl   = card.dataset.extUrl;
-    const srcType  = card.dataset.srcType;   // "youtube" | "archive"
-
-    // YouTube — с autoplay, archive.org — без (браузер блокирует autoplay в iframe)
-    skateFrame.src = srcType === 'youtube'
-      ? `${embedUrl}?autoplay=1`
-      : embedUrl;
-
-    skateTitle.textContent  = card.dataset.videoTitle;
-    skateLabel.textContent  = card.dataset.videoLabel;
-    skateYt.href            = extUrl;
-
-    // Обновляем бейдж источника
-    skateBadge.dataset.src  = srcType;
-    skateBadge.textContent  = srcType === 'youtube'
-      ? 'YouTube · нужен VPN'
-      : 'Archive.org · без VPN';
-
-    skatePlayer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-});
-
 // ===== Booking form =====
 const form = document.getElementById('bookForm');
 const note = document.getElementById('formNote');

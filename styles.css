@@ -185,8 +185,9 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .price-card__list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 14px; height: 8px; border-left: 2px solid var(--accent-text); border-bottom: 2px solid var(--accent-text); transform: rotate(-45deg); }
 
 /* ===== OFFERS ===== */
-.offers { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 26px; }
-.offer { display: flex; align-items: center; gap: 20px; background: var(--bg-card); border: 1px dashed var(--line); border-radius: var(--radius); padding: 22px 26px; }
+.offers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 26px; }
+.offer { display: flex; align-items: center; gap: 20px; min-width: 0; background: var(--bg-card); border: 1px dashed var(--line); border-radius: var(--radius); padding: 22px 26px; }
+.offer > * { min-width: 0; }
 .offer__price { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 22px; color: var(--accent-text); white-space: nowrap; }
 .offer__body { flex: 1; }
 .offer__body h4 { font-size: 17px; margin-bottom: 4px; }
@@ -267,246 +268,6 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .footer__bottom { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--line); margin-top: 40px; padding-top: 24px; color: var(--muted); font-size: 14px; }
 .footer__up:hover { color: var(--accent-text); }
 
-/* ===== HISTORY ===== */
-.timeline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 64px;
-}
-.era {
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 24px 22px;
-  border-top: 3px solid transparent;
-  transition: border-color .25s var(--ease), transform .25s var(--ease);
-}
-.era:hover {
-  border-top-color: var(--accent);
-  transform: translateY(-4px);
-}
-.era__year {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--accent-text);
-  letter-spacing: .06em;
-  margin-bottom: 10px;
-}
-.era h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 8px;
-  line-height: 1.25;
-}
-.era p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-.era__source,
-.video-card__source {
-  display: inline-block;
-  margin-top: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--accent-text);
-  opacity: .5;
-  letter-spacing: .04em;
-  transition: opacity .2s;
-}
-.era__source:hover,
-.video-card__source:hover { opacity: 1; }
-
-.history-divider {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 20px;
-}
-.history-divider::before,
-.history-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--line);
-}
-.history-divider span {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.history-lead {
-  color: var(--muted);
-  font-size: 16px;
-  max-width: 680px;
-  margin: 0 auto 40px;
-  text-align: center;
-  line-height: 1.7;
-}
-
-/* ── Video player ── */
-.video-player {
-  background: #000;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 32px;
-}
-.video-player__embed {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-}
-.video-player__embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.video-player__meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 22px;
-  background: var(--bg-card);
-  border-top: 1px solid var(--line);
-}
-.video-player__label {
-  display: block;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent-text);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-.video-player__title {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-}
-.video-player__right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-.video-player__badge {
-  font-size: 11px;
-  font-weight: 800;
-  padding: 4px 10px;
-  border-radius: 999px;
-  letter-spacing: .04em;
-  white-space: nowrap;
-}
-.video-player__badge[data-src="youtube"] {
-  background: rgba(239, 68, 68, .13);
-  color: #f87171;
-}
-.video-player__badge[data-src="archive"] {
-  background: rgba(34, 197, 94, .13);
-  color: #4ade80;
-}
-[data-theme="light"] .video-player__badge[data-src="youtube"] { color: #dc2626; }
-[data-theme="light"] .video-player__badge[data-src="archive"] { color: #16a34a; }
-.video-player__yt {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);
-  white-space: nowrap;
-  transition: color .2s;
-}
-.video-player__yt:hover { color: var(--accent-text); }
-
-/* VPN badge on card */
-.video-card { position: relative; }
-.video-card[data-src-type="youtube"]::after {
-  content: 'VPN';
-  position: absolute;
-  top: 14px; right: 14px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .06em;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: rgba(239, 68, 68, .13);
-  color: #f87171;
-}
-[data-theme="light"] .video-card[data-src-type="youtube"]::after { color: #dc2626; }
-.video-card[data-src-type="archive"]::after {
-  content: 'Без VPN';
-  position: absolute;
-  top: 14px; right: 14px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  padding: 2px 8px;
-  border-radius: 4px;
-  background: rgba(34, 197, 94, .13);
-  color: #4ade80;
-}
-[data-theme="light"] .video-card[data-src-type="archive"]::after { color: #16a34a; }
-
-.skate-videos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-.video-card {
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px 24px;
-  cursor: pointer;
-  transition: transform .25s var(--ease), border-color .25s, background .25s;
-}
-.video-card.is-active {
-  border-color: var(--accent);
-  background: var(--feature-fill);
-}
-.video-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 212, 0, .4);
-}
-.video-card__year {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--accent-text);
-  line-height: 1;
-  margin-bottom: 14px;
-  opacity: .65;
-}
-.video-card__title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  line-height: 1.2;
-}
-.video-card__co {
-  display: block;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--accent-text);
-  margin-bottom: 14px;
-}
-.video-card__text {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
 /* ===== RESPONSIVE ===== */
 @media (max-width: 980px) {
   .hero__inner { grid-template-columns: 1fr; gap: 36px; }
@@ -518,8 +279,6 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .spots-map iframe { min-height: 320px; }
   .book__inner { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
-  .timeline { grid-template-columns: repeat(2, 1fr); }
-  .skate-videos { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
   .nav, .header__phone { display: none; }
@@ -535,7 +294,10 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .stats__grid { grid-template-columns: 1fr 1fr; }
   .stat:nth-child(2) { border-right: 0; }
   .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
-  .pricing.is-active, .features, .coaches, .offers { grid-template-columns: 1fr; }
+  .pricing.is-active, .features, .coaches, .offers { grid-template-columns: minmax(0, 1fr); }
+  /* Оффер-карточки: стек, чтобы кнопка не распирала ряд за пределы экрана */
+  .offer { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .offer .btn { width: 100%; text-align: center; }
   .hero__facts { grid-template-columns: 1fr; }
   .section { padding: 52px 0; }
   /* Карточки features — компактнее на мобильном */
@@ -547,8 +309,6 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .book__form { padding: 24px 20px; }
   /* Тренеры */
   .coach__info { padding: 16px 18px; }
-  .timeline { grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 48px; }
-  .skate-videos { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .footer__inner { grid-template-columns: 1fr; }
