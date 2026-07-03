@@ -85,16 +85,17 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   background: rgba(12,12,14,.82); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
 }
-.header__inner { display: flex; align-items: center; gap: 24px; height: 72px; }
-.logo { display: flex; align-items: center; gap: 10px; }
+.header__inner { display: flex; align-items: center; gap: 20px; height: 72px; }
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .logo__mark { width: 34px; height: 34px; object-fit: contain; }
-.logo__text { font-weight: 800; font-size: 17px; letter-spacing: .02em; }
+.logo__text { font-weight: 800; font-size: 17px; letter-spacing: .02em; white-space: nowrap; }
 .logo__accent { color: var(--accent-text); margin-left: 4px; }
-.nav { display: flex; gap: 26px; margin-left: auto; }
-.nav__link { color: var(--muted); font-weight: 600; font-size: 15px; transition: color .2s; }
+.nav { display: flex; align-items: center; gap: 22px; margin-left: auto; }
+.nav__link { color: var(--muted); font-weight: 600; font-size: 15px; transition: color .2s; white-space: nowrap; }
 .nav__link:hover { color: var(--text); }
-.header__cta { display: flex; align-items: center; gap: 16px; }
-.header__phone { font-weight: 700; font-size: 15px; }
+.nav__phone, .nav__cta { display: none; }
+.header__cta { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.header__phone { font-weight: 700; font-size: 15px; white-space: nowrap; }
 .header__phone:hover { color: var(--accent-text); }
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px; }
 .burger span { width: 24px; height: 2px; background: var(--text); transition: .3s; }
@@ -280,17 +281,29 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .book__inner { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 768px) {
-  .nav, .header__phone { display: none; }
+/* Ниже 1040px переключаемся на бургер — горизонтальное меню перестаёт помещаться */
+@media (max-width: 1040px) {
+  .header__phone { display: none; }
+  .nav { display: none; }
   .burger { display: flex; }
-  /* Логотип — только эмблема, текст скрыт */
-  .logo__text { display: none; }
+  /* Прижимаем группу «тема + записаться + бургер» вправо, бургер — крайний справа */
+  .header__cta { margin-left: auto; }
   .nav.is-open {
     display: flex; flex-direction: column; gap: 0;
     position: absolute; top: 72px; left: 0; right: 0;
-    background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 8px 24px 16px;
+    background: var(--bg-soft); border-bottom: 1px solid var(--line); padding: 8px 24px 20px;
   }
   .nav.is-open .nav__link { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  /* Телефон и CTA внутри мобильного меню */
+  .nav.is-open .nav__phone {
+    display: block; padding: 16px 0 6px; font-weight: 800; font-size: 18px;
+    color: var(--accent-text); white-space: nowrap;
+  }
+  .nav.is-open .nav__cta { display: block; margin-top: 12px; text-align: center; }
+}
+@media (max-width: 768px) {
+  /* Логотип — только эмблема, текст скрыт */
+  .logo__text { display: none; }
   .stats__grid { grid-template-columns: 1fr 1fr; }
   .stat:nth-child(2) { border-right: 0; }
   .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
@@ -313,7 +326,8 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 @media (max-width: 480px) {
   .footer__inner { grid-template-columns: 1fr; }
   .tabs { width: 100%; }
-  .tab { flex: 1; padding: 10px 8px; font-size: 14px; }
+  /* min-width:0 + перенос — иначе длинный таб «Индивидуальные» распирает ряд за экран */
+  .tab { flex: 1; min-width: 0; padding: 10px 6px; font-size: 13px; white-space: normal; line-height: 1.2; }
   /* Скрыть кнопку «Записаться» в хедере — есть в бургер-меню */
   .header__cta .btn { display: none; }
   .hero__title { font-size: clamp(28px, 8vw, 40px); }

@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Нижегородская школа скейтбординга</title>
   <meta name="description" content="Научим кататься на скейтборде с нуля. Дети с 5 лет, подростки и взрослые. Крытый парк, круглый год, оборудование включено. Бесплатное пробное занятие." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <!-- Open Graph / соцсети -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Школа скейтбординга НН" />
+  <meta property="og:title" content="Школа скейтбординга в Нижнем Новгороде — встанешь на доску на первом занятии" />
+  <meta property="og:description" content="Крытый парк, круглый год, малые группы, доска и защита включены. Дети с 5 лет, подростки и взрослые. Бесплатное пробное занятие." />
+  <meta property="og:image" content="assets/img/action-1.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Школа скейтбординга НН — с нуля до уверенных трюков" />
+  <meta name="twitter:description" content="Крытый парк, опытные тренеры, малые группы. Бесплатное пробное занятие." />
+  <meta name="twitter:image" content="assets/img/action-1.jpg" />
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,7 +42,7 @@
   <header class="header" id="top">
     <div class="container header__inner">
       <a href="#top" class="logo">
-        <img src="assets/img/emblem.png" alt="Нижегородская школа скейтбординга" class="logo__mark" />
+        <img src="assets/img/emblem.png" alt="Нижегородская школа скейтбординга" class="logo__mark" width="34" height="34" decoding="async" />
         <span class="logo__text">Школа скейтбординга<span class="logo__accent"> НН</span></span>
       </a>
       <nav class="nav" id="nav">
@@ -39,6 +51,8 @@
         <a href="#coaches" class="nav__link">Тренеры</a>
         <a href="#spots" class="nav__link">Площадки</a>
         <a href="#faq" class="nav__link">Вопросы</a>
+        <a href="tel:+79159447137" class="nav__phone">+7 (915) 944-71-37</a>
+        <a href="#book" class="btn btn--primary nav__cta">Записаться на пробное</a>
       </nav>
       <div class="header__cta">
         <a href="tel:+79159447137" class="header__phone">+7 (915) 944-71-37</a>
@@ -53,7 +67,7 @@
         </button>
         <a href="#book" class="btn btn--primary btn--sm">Записаться</a>
       </div>
-      <button class="burger" id="burger" aria-label="Меню">
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-controls="nav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -81,7 +95,7 @@
         </ul>
       </div>
       <div class="hero__media">
-        <img src="assets/img/action-1.jpg" alt="Ученик школы скейтбординга" />
+        <img src="assets/img/action-1.jpg" alt="Ученик школы скейтбординга" fetchpriority="high" decoding="async" width="720" height="600" />
         <div class="hero__media-tag">
           <span class="dot"></span> набережная Гребного канала, 108Г
         </div>
@@ -301,7 +315,7 @@
       </div>
       <div class="coaches">
         <article class="coach">
-          <div class="coach__photo"><img src="assets/img/coach-1.jpg" alt="Максим Максимов" /></div>
+          <div class="coach__photo"><img src="assets/img/coach-1.jpg" alt="Максим Максимов" loading="lazy" decoding="async" width="480" height="600" /></div>
           <div class="coach__info">
             <h3>Максим Максимов</h3>
             <span class="coach__role">Тренер · группы и индивидуально</span>
@@ -309,7 +323,7 @@
           </div>
         </article>
         <article class="coach coach--featured">
-          <div class="coach__photo"><img src="assets/img/coach-2.jpg" alt="Никита Ластухин" /></div>
+          <div class="coach__photo"><img src="assets/img/coach-2.jpg" alt="Никита Ластухин" loading="lazy" decoding="async" width="480" height="600" /></div>
           <div class="coach__info">
             <h3>Никита Ластухин</h3>
             <span class="coach__role">Основатель школы · тренер</span>
@@ -317,7 +331,7 @@
           </div>
         </article>
         <article class="coach">
-          <div class="coach__photo"><img src="assets/img/coach-3.jpg" alt="Михаил Белов" /></div>
+          <div class="coach__photo"><img src="assets/img/coach-3.jpg" alt="Михаил Белов" loading="lazy" decoding="async" width="480" height="600" /></div>
           <div class="coach__info">
             <h3>Михаил Белов</h3>
             <span class="coach__role">Тренер · все возрасты</span>
@@ -339,7 +353,7 @@
       <div class="spots-layout">
         <div class="spots-list" id="spotsList">
           <button class="spot is-active" data-ll="44.0342063,56.3316335">
-            <img src="assets/img/spot-goradrom.jpg" alt="Скейт-парк Горадром" />
+            <img src="assets/img/spot-goradrom.jpg" alt="Скейт-парк Горадром" loading="lazy" decoding="async" width="560" height="360" />
             <div class="spot__info">
               <span class="spot__tag">Главная база · крытый</span>
               <h3>Скейт-парк «Горадром»</h3>
@@ -347,28 +361,28 @@
             </div>
           </button>
           <button class="spot" data-ll="43.8554147,56.3430031">
-            <img src="assets/img/spot-trud.jpg" alt="Стадион Труд" />
+            <img src="assets/img/spot-trud.jpg" alt="Стадион Труд" loading="lazy" decoding="async" width="560" height="360" />
             <div class="spot__info">
               <h3>Стадион «Труд»</h3>
               <p>бул. Юбилейный, 30 · Сормовский р-н</p>
             </div>
           </button>
           <button class="spot" data-ll="43.9972768,56.3090476">
-            <img src="assets/img/spot-pushkin.jpg" alt="Парк им. Пушкина" />
+            <img src="assets/img/spot-pushkin.jpg" alt="Парк им. Пушкина" loading="lazy" decoding="async" width="560" height="360" />
             <div class="spot__info">
               <h3>Парк им. Пушкина</h3>
               <p>ул. Белинского · Нижегородский р-н</p>
             </div>
           </button>
           <button class="spot" data-ll="43.9740515,56.2777442">
-            <img src="assets/img/spot-switzerland.jpg" alt="Парк Швейцария" />
+            <img src="assets/img/spot-switzerland.jpg" alt="Парк Швейцария" loading="lazy" decoding="async" width="560" height="360" />
             <div class="spot__info">
               <h3>Парк «Швейцария»</h3>
               <p>ул. Сурикова · Приокский р-н</p>
             </div>
           </button>
           <button class="spot" data-ll="43.8685117,56.2603341">
-            <img src="assets/img/spot-800.jpg" alt="Парк 777-летия" />
+            <img src="assets/img/spot-800.jpg" alt="Парк 777-летия" loading="lazy" decoding="async" width="560" height="360" />
             <div class="spot__info">
               <h3>Парк «777-летия»</h3>
               <p>ул. Бурденко · Автозаводский р-н</p>
@@ -468,7 +482,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#top" class="logo">
-          <img src="assets/img/emblem.png" alt="" class="logo__mark" />
+          <img src="assets/img/emblem.png" alt="" class="logo__mark" loading="lazy" decoding="async" width="34" height="34" />
           <span class="logo__text">Школа скейтбординга<span class="logo__accent"> НН</span></span>
         </a>
         <p>Нижегородская школа скейтбординга. Спорт, культура и уверенность в себе с 2016 года.</p>

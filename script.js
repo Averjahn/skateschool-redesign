@@ -25,15 +25,19 @@ const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 
 burger.addEventListener('click', () => {
-  burger.classList.toggle('is-open');
-  nav.classList.toggle('is-open');
+  const open = nav.classList.toggle('is-open');
+  burger.classList.toggle('is-open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
 });
 
-// Закрываем меню при клике по ссылке
-nav.querySelectorAll('.nav__link').forEach((link) => {
+// Закрываем меню при клике по любой ссылке/кнопке внутри
+nav.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     burger.classList.remove('is-open');
     nav.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Открыть меню');
   });
 });
 
