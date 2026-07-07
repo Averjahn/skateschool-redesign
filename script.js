@@ -53,6 +53,18 @@ tabs.forEach((tab) => {
   });
 });
 
+// ===== Events: закаты / лагерь =====
+const evTabs = document.querySelectorAll('.ev-tab');
+const evPanels = document.querySelectorAll('.ev-panel');
+
+evTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.ev;
+    evTabs.forEach((t) => t.classList.toggle('is-active', t === tab));
+    evPanels.forEach((p) => p.classList.toggle('is-active', p.dataset.evPanel === target));
+  });
+});
+
 // ===== FAQ — открыт только один пункт =====
 const faqItems = document.querySelectorAll('.faq__item');
 faqItems.forEach((item) => {
@@ -102,13 +114,18 @@ form.addEventListener('submit', (e) => {
 });
 
 // ===== Header CTA → клик по формату подставляет его в форму =====
-document.querySelectorAll('.price-card .btn, .offer .btn').forEach((btn) => {
+document.querySelectorAll('.price-card .btn, .offer .btn, .ev-panel .btn').forEach((btn) => {
   btn.addEventListener('click', () => {
     const panel = btn.closest('[data-panel]');
+    const evPanel = btn.closest('[data-ev-panel]');
     const select = document.getElementById('format');
-    if (panel && select) {
+    if (!select) return;
+    if (panel) {
       const map = { group: 'group', individual: 'individual', pair: 'pair' };
       if (map[panel.dataset.panel]) select.value = map[panel.dataset.panel];
+    } else if (evPanel) {
+      const map = { sunset: 'sunset', camp: 'camp' };
+      if (map[evPanel.dataset.evPanel]) select.value = map[evPanel.dataset.evPanel];
     }
   });
 });
@@ -127,7 +144,7 @@ const io = new IntersectionObserver(
   { threshold: 0.12 }
 );
 
-document.querySelectorAll('.price-card, .feature, .coach, .spot, .offer').forEach((el) => {
+document.querySelectorAll('.price-card, .feature, .coach, .spot, .offer, .ev-tab').forEach((el) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(18px)';
   el.style.transition = 'opacity .5s ease, transform .5s ease';

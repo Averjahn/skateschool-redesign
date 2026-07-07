@@ -47,6 +47,7 @@
       </a>
       <nav class="nav" id="nav">
         <a href="#formats" class="nav__link">Форматы и цены</a>
+        <a href="#events" class="nav__link">Закаты и лагерь</a>
         <a href="#why" class="nav__link">Почему мы</a>
         <a href="#coaches" class="nav__link">Тренеры</a>
         <a href="#spots" class="nav__link">Площадки</a>
@@ -400,6 +401,78 @@
     </div>
   </section>
 
+  <!-- ===== EVENTS: SUNSETS & CAMP ===== -->
+  <section class="section" id="events">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Не только занятия</span>
+        <h2 class="section__title">Скейт-закаты и летний лагерь</h2>
+        <p class="section__sub">Два формата вне обычного расписания. Нажми на карточку — детали откроются ниже.</p>
+      </div>
+
+      <div class="ev-tabs" id="evTabs">
+        <button class="ev-tab ev-tab--sunset is-active" data-ev="sunset" style="background-image:url(assets/img/action-2.jpg)">
+          <span class="ev-tab__overlay"></span>
+          <span class="ev-tab__icon">🌇</span>
+          <span class="ev-tab__body">
+            <span class="ev-tab__title">Скейт-закаты</span>
+            <span class="ev-tab__sub">Бесплатные покатушки по набережной</span>
+          </span>
+          <span class="ev-tab__hint">Смотреть детали <span class="ev-tab__arrow">→</span></span>
+        </button>
+        <button class="ev-tab ev-tab--camp" data-ev="camp" style="background-image:url(assets/img/action-1.jpg)">
+          <span class="ev-tab__overlay"></span>
+          <span class="ev-tab__icon">🏕️</span>
+          <span class="ev-tab__body">
+            <span class="ev-tab__title">Скейт-лагерь</span>
+            <span class="ev-tab__sub">Путь развития за одно лето</span>
+          </span>
+          <span class="ev-tab__hint">Смотреть детали <span class="ev-tab__arrow">→</span></span>
+        </button>
+      </div>
+
+      <!-- SUNSET PANEL -->
+      <div class="ev-panel is-active" data-ev-panel="sunset">
+        <div class="ev-panel__media">
+          <img src="assets/img/spot-goradrom.jpg" alt="Скейт-закаты на набережной" loading="lazy" decoding="async" width="560" height="420" />
+          <div class="ev-panel__media-tag ev-panel__media-tag--sunset">🛹 Старт у Горадрома</div>
+        </div>
+        <div class="ev-panel__body">
+          <span class="ev-badge ev-badge--sunset">Бесплатно · для любого уровня</span>
+          <h3>Скейт-закаты</h3>
+          <p>Бесплатные прогулки на скейтбордах по Нижневолжской набережной. Скейтбординг — это не только трюки и скейт-парки, а ещё красивый, медитативный и доступный способ провести летний вечер.</p>
+          <ul class="ev-dates">
+            <li><span class="ev-dates__day">16 июля</span><span class="ev-dates__time">19:30</span></li>
+            <li><span class="ev-dates__day">23 июля</span><span class="ev-dates__time">19:30</span></li>
+          </ul>
+          <p class="ev-note">Каждый четверг · старт у Горадрома · скейтборд и защиту выдаём</p>
+          <a href="#book" class="btn btn--primary ev-cta">Записаться на закат</a>
+        </div>
+      </div>
+
+      <!-- CAMP PANEL -->
+      <div class="ev-panel" data-ev-panel="camp">
+        <div class="ev-panel__media">
+          <img src="assets/img/action-1.jpg" alt="Скейт-лагерь" loading="lazy" decoding="async" width="560" height="420" />
+          <div class="ev-panel__media-tag ev-panel__media-tag--camp">Возраст 6+</div>
+        </div>
+        <div class="ev-panel__body">
+          <span class="ev-badge ev-badge--camp">Это не лагерь на день — это путь развития за одно лето</span>
+          <h3>Скейт-лагерь</h3>
+          <p>Четыре смены за лето: от первых стоек и толчков до уверенных прыжков и трюков. Подходит новичкам — опыт катания не нужен.</p>
+          <ul class="ev-camp-dates">
+            <li><span class="ev-camp-dates__label">Смена 1</span><span class="ev-camp-dates__range">8–12 июня</span></li>
+            <li><span class="ev-camp-dates__label">Смена 2</span><span class="ev-camp-dates__range">17–21 июня</span></li>
+            <li><span class="ev-camp-dates__label">Смена 3</span><span class="ev-camp-dates__range">3–7 августа</span></li>
+            <li><span class="ev-camp-dates__label">Финал</span><span class="ev-camp-dates__range">18–21 августа</span></li>
+          </ul>
+          <p class="ev-note">Бесплатная аренда досок и защиты · питание включено · подходит для новичков</p>
+          <a href="#book" class="btn btn--primary ev-cta">Записаться в лагерь</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== FAQ ===== -->
   <section class="section" id="faq">
     <div class="container container--narrow">
@@ -464,7 +537,8 @@
             <option value="group">Групповые занятия</option>
             <option value="individual">Индивидуальные занятия</option>
             <option value="pair">Парные занятия</option>
-            <option value="camp">Скейт-кэмп</option>
+            <option value="sunset">Скейт-закаты</option>
+            <option value="camp">Скейт-лагерь</option>
           </select>
         </div>
         <label class="consent">
@@ -502,6 +576,7 @@
       <div class="footer__col">
         <h4>Навигация</h4>
         <a href="#formats">Форматы и цены</a>
+        <a href="#events">Закаты и лагерь</a>
         <a href="#coaches">Тренеры</a>
         <a href="#spots">Площадки</a>
         <a href="#book">Записаться</a>
