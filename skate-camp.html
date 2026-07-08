@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Скейт-лагерь в Нижнем Новгороде — путь развития за одно лето</title>
+  <meta name="description" content="Городской скейт-лагерь для детей 6-14 лет. Четыре смены за лето, система уровней «Секретный скейтер», доска и защита включены, обед и вода. Тур в Казань в финале." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Школа скейтбординга НН" />
+  <meta property="og:title" content="Скейт-лагерь в Нижнем Новгороде" />
+  <meta property="og:description" content="Не лагерь на день, а путь развития за одно лето. Четыре смены, система уровней, доска и защита включены." />
+  <meta property="og:image" content="assets/img/events/camp-kids.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', saved || system);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/emblem.png" alt="Нижегородская школа скейтбординга" class="logo__mark" width="34" height="34" decoding="async" />
+        <span class="logo__text">Школа скейтбординга<span class="logo__accent"> НН</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html#formats" class="nav__link">Цены</a>
+        <a href="index.html#events" class="nav__link">События</a>
+        <a href="index.html#why" class="nav__link">Почему мы</a>
+        <a href="index.html#coaches" class="nav__link">Тренеры</a>
+        <a href="index.html#spots" class="nav__link">Площадки</a>
+        <a href="index.html#faq" class="nav__link">Вопросы</a>
+        <a href="tel:+79159447137" class="nav__phone">+7 (915) 944-71-37</a>
+        <a href="index.html#book" class="btn btn--primary nav__cta">Записаться на пробное</a>
+      </nav>
+      <div class="header__cta">
+        <a href="tel:+79159447137" class="header__phone">+7 (915) 944-71-37</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему" title="Светлая / тёмная тема">
+          <svg class="theme-toggle__sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="theme-toggle__moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+        <a href="index.html#book" class="btn btn--primary btn--sm">Записаться</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-controls="nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="page-main">
+
+  <!-- ===== HERO ===== -->
+  <section class="subpage-hero subpage-hero--camp" style="background-image:url(assets/img/events/camp-kids.jpg)">
+    <div class="subpage-hero__overlay"></div>
+    <div class="container subpage-hero__inner">
+      <a href="index.html" class="back-link"><span class="back-link__arrow">←</span> На главную</a>
+      <span class="subpage-hero__badge">Это не лагерь на день — это путь развития за одно лето</span>
+      <h1>Скейт-лагерь</h1>
+      <p class="subpage-hero__lead">Система уровней «Секретный скейтер» с личным журналом прогресса за лето. Четыре смены — от первой стойки на доске до уверенного катания в стрите и на рампе.</p>
+      <div class="subpage-hero__actions">
+        <a href="index.html?format=camp#book" class="btn btn--primary btn--lg">Записаться в лагерь</a>
+        <a href="#stages" class="btn btn--ghost btn--lg">Смотреть смены и цены</a>
+      </div>
+      <ul class="info-chips">
+        <li><b>6–14 лет</b><span>возраст участников</span></li>
+        <li><b>15 детей</b><span>на 3 тренеров в смене</span></li>
+        <li><b>9:40–16:30</b><span>забор и выдача детей</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== ПУТЬ СЕКРЕТНОГО СКЕЙТЕРА (роадмап) ===== -->
+  <section class="section" id="stages">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Путь секретного скейтера</span>
+        <h2 class="section__title">Четыре смены — от базы до тура в Казань</h2>
+        <p class="section__sub">Каждая смена продолжает предыдущую: система уровней и личный журнал прогресса показывают, что ребёнок уже освоил.</p>
+      </div>
+      <div class="stage-grid">
+        <article class="stage-card">
+          <span class="stage-card__num">Этап 1 · База (парк)</span>
+          <h3>8–12 июня</h3>
+          <span class="stage-card__date">научится стоять и контролировать доску</span>
+          <p>Стойка, толчок, контроль доски — с нуля в безопасных условиях крытого парка.</p>
+          <div class="stage-card__price">23 000 ₽</div>
+        </article>
+        <article class="stage-card">
+          <span class="stage-card__num">Этап 2 · Стрит</span>
+          <h3>17–21 июня</h3>
+          <span class="stage-card__date">выход из парка в город</span>
+          <p>Смена совпадает с Go Skateboarding Day — катание по городским локациям.</p>
+          <div class="stage-card__price">23 000 ₽</div>
+        </article>
+        <article class="stage-card">
+          <span class="stage-card__num">Этап 3 · Волны</span>
+          <h3>3–7 августа</h3>
+          <span class="stage-card__date">катание в разных условиях</span>
+          <p>Подходит и новичкам, и тем, кто уже проходил другие смены — рампа, бассейны, разный рельеф.</p>
+          <div class="stage-card__price">23 000 ₽</div>
+        </article>
+        <article class="stage-card stage-card--tour">
+          <span class="stage-card__num">Финал · Тур в Казань</span>
+          <h3>18–21 августа</h3>
+          <span class="stage-card__date">выездная поездка</span>
+          <p>Скейт-тур в другой город + посещение парка аттракционов.</p>
+          <div class="stage-card__price">50 000 ₽</div>
+        </article>
+      </div>
+      <ul class="discount-row">
+        <li><b>−10%</b><span>за 2 смены</span></li>
+        <li><b>−15%</b><span>за 3 смены</span></li>
+        <li><b>−20%</b><span>весь путь: 3 смены + тур</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== АФИША И ЖУРНАЛ ПРОГРЕССА ===== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Секретный скейтер</span>
+        <h2 class="section__title">Личный журнал прогресса за лето</h2>
+        <p class="section__sub">Каждый участник ведёт свою карту уровня: прыжки, свитч, скорость, рампа, скольжения, менуал — тренер отмечает прогресс, а не просто «присматривает».</p>
+      </div>
+      <div class="features" style="grid-template-columns: 1.3fr 1fr; max-width: 900px; margin: 0 auto; align-items: stretch;">
+        <img src="assets/img/events/camp-roadmap.jpg" alt="Карта пути секретного скейтера: смены, даты, финал в Казани" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius); border: 1px solid var(--line);" />
+        <img src="assets/img/events/camp-journal.jpg" alt="Карточки «Секретный скейтер» — личный журнал прогресса ребёнка" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius); border: 1px solid var(--line);" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ЧТО ВКЛЮЧЕНО ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Что включено</span>
+        <h2 class="section__title">Всё для комфортного дня</h2>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="feature__icon">🛹</div>
+          <h3>Доска и защита</h3>
+          <p>Бесплатная аренда скейтборда и полного комплекта защиты на каждый день смены.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🍽️</div>
+          <h3>Обед из нескольких блюд</h3>
+          <p>Первое, второе, десерт и напиток — плюс доступ к питьевой воде весь день.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🗺️</div>
+          <h3>Разные локации</h3>
+          <p>Горадром, парк Пушкина, Mega skatepark, парк «Швейцария» и городские улицы.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">📓</div>
+          <h3>Журнал «Секретный скейтер»</h3>
+          <p>Квесты, мини-лекции и отметки прогресса — не просто катание, а система роста.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🗣️</div>
+          <h3>Обратная связь тренеров</h3>
+          <p>Разбор техники и персональные советы каждый день от тренера смены.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">👨‍👩‍👧</div>
+          <h3>Группы по 15 человек</h3>
+          <p>3 тренера на группу — внимание каждому участнику смены.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ТРЕНЕРЫ ===== -->
+  <section class="section section--dark" id="coaches">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Тренеры смен</span>
+        <h2 class="section__title">Катаются сами — и научат вашего ребёнка</h2>
+      </div>
+      <div class="coaches">
+        <article class="coach">
+          <div class="coach__photo"><img src="assets/img/coach-1.jpg" alt="Максим Максимов" loading="lazy" decoding="async" width="480" height="600" /></div>
+          <div class="coach__info">
+            <h3>Максим Максимов</h3>
+            <span class="coach__role">6+ лет опыта</span>
+            <p>Работает и с детьми, и со взрослыми — скейтборд и сноуборд.</p>
+          </div>
+        </article>
+        <article class="coach coach--featured">
+          <div class="coach__photo"><img src="assets/img/coach-2.jpg" alt="Никита Ластухин" loading="lazy" decoding="async" width="480" height="600" /></div>
+          <div class="coach__info">
+            <h3>Никита Ластухин</h3>
+            <span class="coach__role">Основатель школы · 15+ лет</span>
+            <p>Член сборной России, более 20 наград на соревнованиях.</p>
+          </div>
+        </article>
+        <article class="coach">
+          <div class="coach__photo"><img src="assets/img/coach-3.jpg" alt="Михаил Белов" loading="lazy" decoding="async" width="480" height="600" /></div>
+          <div class="coach__info">
+            <h3>Михаил Белов</h3>
+            <span class="coach__role">10+ лет опыта</span>
+            <p>Работает с любым возрастом, проектирует фингерборд-парки.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container container--narrow">
+      <div class="section__head">
+        <span class="eyebrow">Частые вопросы</span>
+        <h2 class="section__title">Коротко о главном</h2>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>Можно на один день, а не на всю смену?</summary>
+          <div class="faq__a">Нет, группы закрытые — до 15 человек на смену, разовое посещение не предусмотрено.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Нужен ли опыт катания?</summary>
+          <div class="faq__a">Нет. Программа рассчитана на разный уровень — тренеры дифференцируют нагрузку и задания внутри группы.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Нужна ли своя доска и защита?</summary>
+          <div class="faq__a">Нет, аренда скейтборда и защиты входит в стоимость смены.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Какой дресс-код?</summary>
+          <div class="faq__a">Строгого дресс-кода нет — удобная спортивная одежда по погоде и обувь на плоской подошве.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Что взять с собой?</summary>
+          <div class="faq__a">Обед уже включён, но можно взять лёгкий перекус. Вода доступна в течение всего дня.</div>
+        </details>
+        <details class="faq__item">
+          <summary>Во сколько забор и выдача детей?</summary>
+          <div class="faq__a">Сбор в 9:40, выдача с 16:30 до 21:00 в зависимости от смены.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="book" id="cta">
+    <div class="container" style="text-align:center;">
+      <h2 style="font-size: clamp(26px,3vw,36px); margin-bottom: 14px;">Готовы начать путь секретного скейтера?</h2>
+      <p style="color:var(--muted); font-size:17px; margin-bottom: 26px;">Выберите смену или запишитесь сразу на весь путь — расскажем подробнее и подберём формат.</p>
+      <a href="index.html?format=camp#book" class="btn btn--primary btn--lg">Записаться в лагерь</a>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="logo">
+          <img src="assets/img/emblem.png" alt="" class="logo__mark" loading="lazy" decoding="async" width="34" height="34" />
+          <span class="logo__text">Школа скейтбординга<span class="logo__accent"> НН</span></span>
+        </a>
+        <p>Нижегородская школа скейтбординга. Спорт, культура и уверенность в себе с 2016 года.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+79159447137">+7 (915) 944-71-37</a>
+        <a href="mailto:skateschoolnn@gmail.com">skateschoolnn@gmail.com</a>
+        <span>наб. Гребного канала, 108Г</span>
+      </div>
+      <div class="footer__col">
+        <h4>Мы в сети</h4>
+        <a href="https://t.me/skateschoolnino" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.instagram.com/skateschoolnn" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://vk.com/skateschoolnn" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+      <div class="footer__col">
+        <h4>Навигация</h4>
+        <a href="index.html#formats">Форматы и цены</a>
+        <a href="skate-sunset.html">Скейт-закаты</a>
+        <a href="skate-camp.html">Скейт-лагерь</a>
+        <a href="index.html#coaches">Тренеры</a>
+        <a href="index.html#spots">Площадки</a>
+        <a href="index.html#book">Записаться</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Нижегородская школа скейтбординга. Редизайн-концепт.</span>
+      <a href="index.html" class="footer__up">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js?v=4"></script>
+</body>
+</html>

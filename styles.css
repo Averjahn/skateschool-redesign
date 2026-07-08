@@ -90,11 +90,11 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .logo__mark { width: 34px; height: 34px; object-fit: contain; }
 .logo__text { font-weight: 800; font-size: 17px; letter-spacing: .02em; white-space: nowrap; }
 .logo__accent { color: var(--accent-text); margin-left: 4px; }
-.nav { display: flex; align-items: center; gap: 22px; margin-left: auto; }
-.nav__link { color: var(--muted); font-weight: 600; font-size: 15px; transition: color .2s; white-space: nowrap; }
+.nav { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.nav__link { color: var(--muted); font-weight: 600; font-size: 14px; transition: color .2s; white-space: nowrap; }
 .nav__link:hover { color: var(--text); }
 .nav__phone, .nav__cta { display: none; }
-.header__cta { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.header__cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .header__phone { font-weight: 700; font-size: 15px; white-space: nowrap; }
 .header__phone:hover { color: var(--accent-text); }
 .burger { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px; }
@@ -247,12 +247,12 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .ev-tab:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 .ev-tab.is-active { border-color: rgba(255,255,255,.5); }
 /* Курсор-подсказка: у каждой карточки свой «переходный» курсор в цвет темы карточки */
-/* Рукописная стрелка-«маркер» — перекликается со стилем флаеров (рукописный «Совок», тейп, коллаж) */
+/* Рука в белой перчатке с манжетой в цвет карточки — указательный палец служит «носиком» курсора */
 .ev-tab--sunset {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><circle cx='21' cy='21' r='19' fill='%23e8373b' stroke='white' stroke-width='2'/><path d='M12 27 Q19 15 29 14' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round'/><path d='M29 14 L23 13.5 M29 14 L27.5 19.5' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") 12 27, pointer;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='47' viewBox='0 0 48 56'><rect x='10' y='42' width='30' height='10' rx='3' fill='%23e8373b' stroke='black' stroke-width='2'/><rect x='14' y='26' width='22' height='18' rx='9' fill='white' stroke='black' stroke-width='2'/><rect x='2' y='30' width='16' height='10' rx='5' fill='white' stroke='black' stroke-width='2' transform='rotate(-30 10 35)'/><rect x='38' y='18' width='8' height='12' rx='4' fill='white' stroke='black' stroke-width='2'/><rect x='31' y='14' width='9' height='16' rx='4.5' fill='white' stroke='black' stroke-width='2'/><rect x='23' y='10' width='10' height='20' rx='5' fill='white' stroke='black' stroke-width='2'/><rect x='10' y='4' width='12' height='26' rx='6' fill='white' stroke='black' stroke-width='2'/></svg>") 13 3, pointer;
 }
 .ev-tab--camp {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42' viewBox='0 0 42 42'><circle cx='21' cy='21' r='19' fill='%237a9a1e' stroke='white' stroke-width='2'/><path d='M12 27 Q19 15 29 14' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round'/><path d='M29 14 L23 13.5 M29 14 L27.5 19.5' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") 12 27, pointer;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='47' viewBox='0 0 48 56'><rect x='10' y='42' width='30' height='10' rx='3' fill='%237a9a1e' stroke='black' stroke-width='2'/><rect x='14' y='26' width='22' height='18' rx='9' fill='white' stroke='black' stroke-width='2'/><rect x='2' y='30' width='16' height='10' rx='5' fill='white' stroke='black' stroke-width='2' transform='rotate(-30 10 35)'/><rect x='38' y='18' width='8' height='12' rx='4' fill='white' stroke='black' stroke-width='2'/><rect x='31' y='14' width='9' height='16' rx='4.5' fill='white' stroke='black' stroke-width='2'/><rect x='23' y='10' width='10' height='20' rx='5' fill='white' stroke='black' stroke-width='2'/><rect x='10' y='4' width='12' height='26' rx='6' fill='white' stroke='black' stroke-width='2'/></svg>") 13 3, pointer;
 }
 .ev-tab__overlay { position: absolute; inset: 0; z-index: 0; }
 .ev-tab--sunset .ev-tab__overlay { background: linear-gradient(160deg, rgba(232,55,59,.88), rgba(20,10,10,.55) 70%); }
@@ -271,31 +271,63 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
 .ev-tab:hover .ev-tab__arrow { transform: translateX(4px); }
 .ev-tab.is-active .ev-tab__hint { opacity: 1; }
 
-.ev-panel { display: none; grid-template-columns: .9fr 1.1fr; gap: 36px; align-items: center; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; }
-.ev-panel.is-active { display: grid; animation: fade .4s var(--ease); }
-.ev-panel__media { position: relative; border-radius: var(--radius-sm); overflow: hidden; }
-.ev-panel__media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-.ev-panel__media-tag {
-  position: absolute; left: 12px; bottom: 12px; padding: 8px 14px; border-radius: 999px;
-  font-size: 13px; font-weight: 800; color: #fff; backdrop-filter: blur(6px);
+/* ===== SUBPAGES: скейт-закаты / скейт-лагерь (skate-sunset.html, skate-camp.html) ===== */
+.back-link {
+  display: inline-flex; align-items: center; gap: 8px; color: #fff;
+  background: rgba(0,0,0,.35); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.28);
+  padding: 9px 16px 9px 14px; border-radius: 999px; font-weight: 700; font-size: 14px;
+  margin-bottom: 26px; transition: background .2s, transform .2s;
 }
-.ev-panel__media-tag--sunset { background: rgba(232,55,59,.85); }
-.ev-panel__media-tag--camp { background: rgba(122,154,30,.85); }
-.ev-badge { display: inline-block; padding: 7px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; margin-bottom: 16px; }
-.ev-badge--sunset { background: rgba(232,55,59,.12); color: #e8373b; }
-.ev-badge--camp { background: rgba(122,154,30,.14); color: #7a9a1e; }
-.ev-panel__body h3 { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
-.ev-panel__body > p { color: var(--muted); font-size: 16px; margin-bottom: 18px; }
-.ev-dates { list-style: none; display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
-.ev-dates li { display: flex; flex-direction: column; gap: 2px; background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 10px 18px; }
-.ev-dates__day { font-weight: 700; font-size: 15px; }
-.ev-dates__time { color: var(--muted); font-size: 13px; }
-.ev-camp-dates { list-style: none; display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
-.ev-camp-dates li { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 10px 12px; text-align: center; }
-.ev-camp-dates__label { display: block; color: var(--accent-text); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 3px; }
-.ev-camp-dates__range { display: block; font-weight: 700; font-size: 13px; }
-.ev-note { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
-.ev-cta { display: inline-flex; }
+.back-link:hover { background: rgba(0,0,0,.55); transform: translateX(-3px); }
+.back-link__arrow { display: inline-block; transform: translateX(0); transition: transform .2s var(--ease); }
+.back-link:hover .back-link__arrow { transform: translateX(-3px); }
+
+.subpage-hero { position: relative; min-height: 480px; display: flex; align-items: flex-end; padding: 110px 0 48px; background-size: cover; background-position: center; overflow: hidden; }
+.subpage-hero__overlay { position: absolute; inset: 0; z-index: 0; }
+.subpage-hero--sunset .subpage-hero__overlay { background: linear-gradient(180deg, rgba(20,8,8,.15), rgba(10,6,6,.94) 82%), linear-gradient(100deg, rgba(232,55,59,.35), transparent 60%); }
+.subpage-hero--camp .subpage-hero__overlay { background: linear-gradient(180deg, rgba(8,12,4,.15), rgba(8,10,4,.94) 82%), linear-gradient(100deg, rgba(122,154,30,.35), transparent 60%); }
+.subpage-hero__inner { position: relative; z-index: 1; max-width: 700px; }
+.subpage-hero__badge { display: inline-block; padding: 7px 14px; border-radius: 999px; font-weight: 700; font-size: 13px; margin-bottom: 18px; color: #111; }
+.subpage-hero--sunset .subpage-hero__badge { background: #e8373b; color: #fff; }
+.subpage-hero--camp .subpage-hero__badge { background: #b6d94d; }
+.subpage-hero h1 { color: #fff; font-size: clamp(32px, 5vw, 54px); margin-bottom: 16px; }
+.subpage-hero__lead { color: rgba(255,255,255,.86); font-size: 17px; margin-bottom: 26px; max-width: 560px; }
+.subpage-hero__logo { max-width: 360px; width: 60%; height: auto; margin-bottom: 18px; filter: drop-shadow(0 8px 24px rgba(0,0,0,.5)); }
+.subpage-hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+.info-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+.info-chips li { background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 12px 18px; display: flex; flex-direction: column; gap: 2px; }
+.info-chips b { font-size: 15px; }
+.info-chips span { color: var(--muted); font-size: 13px; }
+
+/* Таймлайн хода мероприятия */
+.timeline { display: flex; flex-direction: column; border-left: 2px solid var(--line); margin-left: 10px; max-width: 640px; }
+.timeline__item { position: relative; padding: 0 0 30px 30px; }
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item::before { content: ""; position: absolute; left: -7px; top: 3px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--line); }
+.timeline__time { display: block; font-family: 'Unbounded', sans-serif; font-weight: 700; color: var(--accent-text); font-size: 14px; margin-bottom: 5px; }
+.timeline__title { font-weight: 700; font-size: 16px; margin-bottom: 3px; }
+.timeline__text { color: var(--muted); font-size: 14px; }
+
+/* Роадмап смен лагеря — «путь Секретного скейтера» */
+.stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.stage-card { position: relative; background: var(--bg-card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; display: flex; flex-direction: column; gap: 8px; transition: transform .25s var(--ease), border-color .25s; }
+.stage-card:hover { transform: translateY(-5px); border-color: rgba(122,154,30,.4); }
+.stage-card--tour { border-color: rgba(122,154,30,.5); background: linear-gradient(180deg, #1c2308, var(--bg-card)); }
+[data-theme="light"] .stage-card--tour { background: linear-gradient(180deg, #eef6d2, var(--bg-card)); }
+.stage-card__num { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 12px; color: #8fae1c; text-transform: uppercase; letter-spacing: .06em; }
+.stage-card h3 { font-size: 19px; font-weight: 700; }
+.stage-card__date { color: var(--muted); font-size: 13px; font-weight: 600; }
+.stage-card p { color: var(--muted); font-size: 14px; flex: 1; }
+.stage-card__price { font-family: 'Unbounded', sans-serif; font-weight: 800; font-size: 22px; margin-top: 4px; }
+.stage-card__price span { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+.discount-row { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.discount-row li { background: var(--bg-soft); border: 1px dashed var(--line); border-radius: var(--radius-sm); padding: 14px 16px; text-align: center; }
+.discount-row b { display: block; font-family: 'Unbounded', sans-serif; font-size: 20px; color: #8fae1c; margin-bottom: 2px; }
+.discount-row span { color: var(--muted); font-size: 13px; }
+
+.tape-divider { width: 100%; height: 34px; object-fit: cover; display: block; opacity: .9; }
 
 /* ===== FAQ ===== */
 .faq { display: flex; flex-direction: column; gap: 12px; }
@@ -341,14 +373,18 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .spots-layout { grid-template-columns: 1fr; }
   .spots-map { order: -1; min-height: 320px; }
   .spots-map iframe { min-height: 320px; }
-  .ev-panel { grid-template-columns: 1fr; }
-  .ev-panel__media img { aspect-ratio: 16/9; }
+  .stage-grid { grid-template-columns: 1fr 1fr; }
+  .discount-row { grid-template-columns: 1fr; }
   .book__inner { grid-template-columns: 1fr; gap: 32px; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
 }
+/* Телефон в хедере — только на очень широких экранах: с 6 пунктами меню и кнопкой
+   «Записаться» номер уже не помещается в контейнер 1180px на промежуточных ширинах */
+@media (max-width: 1440px) {
+  .header__phone { display: none; }
+}
 /* Ниже 1040px переключаемся на бургер — горизонтальное меню перестаёт помещаться */
 @media (max-width: 1040px) {
-  .header__phone { display: none; }
   .nav { display: none; }
   .burger { display: flex; }
   /* Прижимаем группу «тема + записаться + бургер» вправо, бургер — крайний справа */
@@ -374,8 +410,10 @@ h1, h2, h3, .logo__text { font-family: 'Unbounded', sans-serif; line-height: 1.0
   .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
   .pricing.is-active, .features, .coaches, .offers { grid-template-columns: minmax(0, 1fr); }
   .ev-tabs { grid-template-columns: 1fr; }
-  .ev-camp-dates { grid-template-columns: 1fr 1fr; }
-  .ev-panel { padding: 22px 18px; }
+  .stage-grid { grid-template-columns: 1fr; }
+  .subpage-hero { min-height: 400px; padding: 96px 0 36px; }
+  .subpage-hero__logo { width: 78%; }
+  .info-chips { gap: 8px; }
   /* Оффер-карточки: стек, чтобы кнопка не распирала ряд за пределы экрана */
   .offer { flex-direction: column; align-items: flex-start; gap: 14px; }
   .offer .btn { width: 100%; text-align: center; }
