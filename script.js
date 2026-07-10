@@ -138,6 +138,11 @@ function initPageScripts() {
     el.style.transition = 'opacity .5s ease, transform .5s ease';
     revealIO.observe(el);
   });
+
+  // Сообщаем админ-слою (admin.js), что содержимое страницы перерисовано —
+  // чтобы он заново наложил опубликованный контент и, если открыт редактор,
+  // подключил редактирование к новым элементам.
+  document.dispatchEvent(new CustomEvent('ssnn:pagerender'));
 }
 
 // ===== Бесшовная навигация между страницами (главная / закаты / лагерь) =====

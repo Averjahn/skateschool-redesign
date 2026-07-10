@@ -1,0 +1,122 @@
+/* ===== Админ-слой школы скейтбординга =====
+   Все элементы скрыты, пока не активирован редактор. Используем переменные
+   основной темы (--bg, --accent, --line…), поэтому автоматически совпадает
+   со светлой и тёмной темой сайта. */
+
+/* ---- overlay-модалки (пароль, токен) ---- */
+.ssnn-modal-backdrop {
+  position: fixed; inset: 0; z-index: 4000;
+  background: rgba(0,0,0,.6); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+  animation: ssnnFade .2s ease;
+}
+@keyframes ssnnFade { from { opacity: 0 } to { opacity: 1 } }
+.ssnn-modal {
+  width: 100%; max-width: 420px;
+  background: var(--bg-card, #18181c); border: 1px solid var(--line, #2a2a30);
+  border-radius: 18px; padding: 28px; box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  color: var(--text, #f4f4f5); font-family: 'Manrope', system-ui, sans-serif;
+}
+.ssnn-modal h3 {
+  font-family: 'Unbounded', sans-serif; font-size: 20px; margin: 0 0 6px;
+  display: flex; align-items: center; gap: 8px;
+}
+.ssnn-modal p { color: var(--muted, #a1a1aa); font-size: 14px; margin: 0 0 18px; line-height: 1.5; }
+.ssnn-modal label { display: block; font-size: 12px; font-weight: 700; color: var(--muted, #a1a1aa); margin: 0 0 7px; }
+.ssnn-modal input[type="password"],
+.ssnn-modal input[type="text"] {
+  width: 100%; box-sizing: border-box; margin-bottom: 16px;
+  background: var(--bg-soft, #141417); border: 1px solid var(--line, #2a2a30);
+  border-radius: 12px; padding: 13px 15px; color: var(--text, #f4f4f5);
+  font-family: 'Manrope', sans-serif; font-size: 15px;
+}
+.ssnn-modal input:focus { outline: none; border-color: var(--accent, #ffd400); }
+.ssnn-modal__row { display: flex; gap: 10px; }
+.ssnn-modal__err { color: #ff6b6b; font-size: 13px; font-weight: 600; margin: -8px 0 14px; min-height: 16px; }
+.ssnn-modal a { color: var(--accent-text, #ffd400); }
+
+.ssnn-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 14px;
+  padding: 11px 18px; border-radius: 999px; border: 1px solid transparent;
+  cursor: pointer; transition: transform .15s ease, background .15s, border-color .15s, color .15s;
+  white-space: nowrap; background: transparent; color: var(--text, #f4f4f5);
+}
+.ssnn-btn:hover { transform: translateY(-1px); }
+.ssnn-btn--primary { background: var(--accent, #ffd400); color: #111; }
+.ssnn-btn--primary:hover { background: var(--accent-2, #ffe357); }
+.ssnn-btn--ghost { border-color: var(--line, #2a2a30); color: var(--text, #f4f4f5); }
+.ssnn-btn--ghost:hover { border-color: var(--accent-text, #ffd400); color: var(--accent-text, #ffd400); }
+.ssnn-btn--danger { border-color: rgba(255,107,107,.4); color: #ff6b6b; }
+.ssnn-btn--danger:hover { background: rgba(255,107,107,.12); }
+.ssnn-btn:disabled { opacity: .5; cursor: default; transform: none; }
+
+/* ---- панель редактора (снизу) ---- */
+.ssnn-bar {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 18px; z-index: 3900;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;
+  background: var(--bg-card, #18181c); border: 1px solid var(--line, #2a2a30);
+  border-radius: 16px; padding: 10px 14px; box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  max-width: calc(100vw - 24px); font-family: 'Manrope', sans-serif;
+}
+.ssnn-bar__brand {
+  display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 13px;
+  color: var(--text, #f4f4f5); padding-right: 6px; border-right: 1px solid var(--line, #2a2a30);
+}
+.ssnn-bar__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent, #ffd400); box-shadow: 0 0 0 4px rgba(255,212,0,.2); }
+.ssnn-bar__status { font-size: 12px; color: var(--muted, #a1a1aa); font-weight: 600; }
+.ssnn-bar__status b { color: var(--accent-text, #ffd400); }
+
+/* подсветка редактируемых зон только в режиме редактора */
+body.ssnn-editing [data-ssnn-key] {
+  outline: 1px dashed rgba(255,212,0,.45); outline-offset: 3px;
+  border-radius: 3px; transition: outline-color .15s, background .15s; cursor: text;
+}
+body.ssnn-editing [data-ssnn-key]:hover { outline-color: var(--accent, #ffd400); background: rgba(255,212,0,.06); }
+body.ssnn-editing [data-ssnn-key][contenteditable="true"]:focus {
+  outline: 2px solid var(--accent, #ffd400); background: rgba(255,212,0,.08);
+}
+/* редактируемые картинки */
+body.ssnn-editing [data-ssnn-img] {
+  position: relative; cursor: pointer;
+  outline: 2px dashed rgba(255,212,0,.5); outline-offset: -2px;
+}
+body.ssnn-editing [data-ssnn-img]::after {
+  content: "📷 Заменить фото"; position: absolute; z-index: 5; left: 50%; top: 50%;
+  transform: translate(-50%,-50%); background: rgba(0,0,0,.72); color: #fff;
+  font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 13px;
+  padding: 8px 14px; border-radius: 999px; pointer-events: none;
+  opacity: 0; transition: opacity .15s ease; white-space: nowrap;
+}
+body.ssnn-editing [data-ssnn-img]:hover::after { opacity: 1; }
+body.ssnn-editing [data-ssnn-img]:hover { outline-color: var(--accent, #ffd400); }
+
+/* баннер «есть неопубликованный черновик» (когда редактор закрыт) */
+.ssnn-draft-flag {
+  position: fixed; right: 16px; bottom: 16px; z-index: 3800;
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg-card, #18181c); border: 1px solid var(--accent, #ffd400);
+  border-radius: 14px; padding: 12px 16px; box-shadow: 0 16px 40px rgba(0,0,0,.4);
+  font-family: 'Manrope', sans-serif; font-size: 13px; color: var(--text, #f4f4f5); max-width: 320px;
+}
+.ssnn-draft-flag b { display: block; font-size: 13px; margin-bottom: 2px; }
+.ssnn-draft-flag span { color: var(--muted, #a1a1aa); font-size: 12px; }
+
+/* тосты */
+.ssnn-toasts { position: fixed; left: 50%; transform: translateX(-50%); top: 16px; z-index: 4200; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; }
+.ssnn-toast {
+  background: var(--bg-card, #18181c); border: 1px solid var(--line, #2a2a30);
+  border-left: 3px solid var(--accent, #ffd400); border-radius: 10px;
+  padding: 11px 16px; font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 600;
+  color: var(--text, #f4f4f5); box-shadow: 0 12px 30px rgba(0,0,0,.4);
+  animation: ssnnToast .25s ease; max-width: 90vw;
+}
+.ssnn-toast--err { border-left-color: #ff6b6b; }
+.ssnn-toast--ok { border-left-color: #6ede8a; }
+@keyframes ssnnToast { from { opacity: 0; transform: translateY(-8px) } to { opacity: 1; transform: none } }
+
+@media (max-width: 560px) {
+  .ssnn-bar { gap: 7px; padding: 9px 10px; bottom: 10px; }
+  .ssnn-btn { padding: 9px 12px; font-size: 13px; }
+  .ssnn-bar__brand, .ssnn-bar__status { display: none; }
+}
